@@ -1,0 +1,19 @@
+import { Button } from "../ui/button";
+import { FormField, type FormFieldType } from "./FormField";
+
+interface FormProps {
+    className: string;
+    fields: Array<FormFieldType>;
+    formAction: (formData: FormData) => void | Promise<void>;
+    buttonText: string;
+}
+export const Form = ({ className, formAction, fields, buttonText }: FormProps) => {
+    return (
+        <form className={className} action={formAction}>
+            {fields.map((fieldData) => (
+                <FormField {...fieldData} />
+            ))}
+            <Button>{buttonText}</Button>
+        </form>
+    );
+};
