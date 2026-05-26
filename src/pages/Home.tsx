@@ -1,4 +1,5 @@
 import { Form } from "@/components/form/Form";
+import { Main } from "@/components/Main";
 
 export const Home = () => {
     const formProps = {
@@ -19,6 +20,7 @@ export const Home = () => {
             <header className="p-4">
                 <Form className="flex gap-4" {...formProps}></Form>
             </header>
+            <Main></Main>
         </>
     );
 };
