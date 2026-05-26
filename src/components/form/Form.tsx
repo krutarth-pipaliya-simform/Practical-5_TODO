@@ -13,7 +13,9 @@ export const Form = ({ className, formAction, fields, buttonText }: FormProps) =
             {fields.map((fieldData) => (
                 <FormField {...fieldData} />
             ))}
-            <Button>{buttonText}</Button>
+            <Button className="transition-colors hover:bg-green-500 cursor-pointer hover:text-white">
+                {buttonText}
+            </Button>
         </form>
     );
 };
