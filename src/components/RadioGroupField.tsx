@@ -6,10 +6,14 @@ export interface RadioGroupProps {
     value: string;
 }
 
-export const RadioGroupField = ({ label, value }: RadioGroupProps) => {
+export const RadioGroupField = ({
+    onClick,
+    label,
+    value,
+}: RadioGroupProps & { onClick: () => void }) => {
     const id = useId();
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3" onClick={onClick}>
             <RadioGroupItem className="cursor-pointer" id={id} value={value} />
             <Label className="cursor-pointer" htmlFor={id}>
                 {label}
