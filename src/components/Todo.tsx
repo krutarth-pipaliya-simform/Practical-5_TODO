@@ -37,7 +37,12 @@ export const Todo = ({
                 <div className="text-sm text-muted-foreground">{timeCreated}</div>
             </div>
 
-            <Button className="transition-colors hover:bg-red-500 cursor-pointer hover:text-white">
+            <Button
+                onClick={() => {
+                    dispatch({ type: "DELETE", todoId: id });
+                }}
+                className="transition-colors hover:bg-red-500 cursor-pointer hover:text-white"
+            >
                 Delete
             </Button>
         </div>
