@@ -1,10 +1,14 @@
-import { useMyReducer } from "@/hooks/useMyReducer";
+import { type ActionType } from "@/hooks/useMyReducer";
 import { RadioSelection } from "./RadioSelection";
-import { Todo } from "./Todo";
+import { Todo, type TodoType } from "./Todo";
 
-export const Main = () => {
-    const [todos, dispatch] = useMyReducer();
-
+export const Main = ({
+    todos,
+    dispatch,
+}: {
+    todos: TodoType[];
+    dispatch: (action: ActionType) => void;
+}) => {
     const RadioProps = {
         RadioGroupFieldArray: [
             {

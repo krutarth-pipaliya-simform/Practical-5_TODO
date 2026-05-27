@@ -1,7 +1,9 @@
 import { Form } from "@/components/form/Form";
 import { Main } from "@/components/Main";
+import { useMyReducer } from "@/hooks/useMyReducer";
 
 export const Home = () => {
+    const [todos, dispatch] = useMyReducer();
     const formProps = {
         fields: [
             {
@@ -11,7 +13,15 @@ export const Home = () => {
             },
         ],
         formAction: (formData: FormData) => {
-            console.log(formData);
+            dispatch({
+                type: "ADD",
+                todo: {
+                    id: crypto.randomUUID(),
+                    isComplete: false,
+                    timeCreated: new Date().toDateString(),
+                    title: String(formData.get("todo")),
+                },
+            });
         },
         buttonText: "Create Todo",
     };
@@ -20,7 +30,7 @@ export const Home = () => {
             <header className="p-4">
                 <Form className="flex gap-4" {...formProps}></Form>
             </header>
-            <Main></Main>
+            <Main todos={todos} dispatch={dispatch}></Main>
         </>
     );
 };
