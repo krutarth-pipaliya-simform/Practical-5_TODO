@@ -10,9 +10,14 @@ export const Home = () => {
                 name: "todo",
                 placeholder: "Enter a Todo",
                 type: "text",
+                isRequired: true,
             },
         ],
         formAction: (formData: FormData) => {
+            if (String(formData.get("todo")).trim() === "") {
+                alert("please enter some text");
+                return;
+            }
             dispatch({
                 type: "ADD",
                 todo: {
