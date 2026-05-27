@@ -10,7 +10,7 @@ export const RadioSelection = ({
         <>
             <RadioGroup className="flex p-4">
                 {RadioGroupFieldArray.map((field) => {
-                    return <RadioGroupField {...field}></RadioGroupField>;
+                    return <RadioGroupField key={field.label} {...field}></RadioGroupField>;
                 })}
             </RadioGroup>
         </>
