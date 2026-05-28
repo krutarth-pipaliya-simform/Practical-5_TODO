@@ -30,7 +30,7 @@ export const useMyReducer = () => {
         throw new Error("Localstorage has tempered data");
     }
 
-    return useReducer(reducer, parsedTodos);
+    return useReducer(reducer, ValidTodos(parsedTodos));
 };
 
 const reducer = (prevState: TodoType[], action: ActionType) => {
