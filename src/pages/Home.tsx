@@ -35,7 +35,7 @@ export const Home = () => {
             <header className="p-4">
                 <Form className="flex gap-4" {...formProps}></Form>
             </header>
-            <Main todos={todos} dispatch={dispatch}></Main>
+            <Main todos={todos} dispatch={dispatch} />
         </>
     );
 };
