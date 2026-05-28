@@ -47,7 +47,7 @@ const reducer = (prevState: TodoType[], action: ActionType) => {
             break;
 
         case "UPDATE":
-            returnArray = [...prevState.filter((todo) => todo.id !== action.todoId), action.todo];
+            returnArray = prevState.map((todo) => (todo.id !== action.todoId ? todo : action.todo));
             break;
 
         default:
