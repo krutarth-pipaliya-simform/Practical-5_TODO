@@ -17,14 +17,14 @@ export type ActionType =
       };
 
 export const useMyReducer = () => {
-    let localTodos = localStorage.getItem("todos");
+    let todos = localStorage.getItem("todos");
 
-    if (localTodos === null) {
+    if (todos === null) {
         localStorage.setItem("todos", JSON.stringify([]));
-        localTodos = JSON.stringify([]);
+        todos = JSON.stringify([]);
     }
 
-    const parsedTodos = JSON.parse(localTodos ?? "");
+    const parsedTodos = JSON.parse(todos);
 
     if (!(parsedTodos instanceof Array)) {
         throw new Error("Localstorage has tempered data");
@@ -38,7 +38,6 @@ const reducer = (prevState: TodoType[], action: ActionType) => {
 
     switch (action.type) {
         case "ADD":
-            localStorage.setItem("todos", JSON.stringify([...prevState, action.todo]));
             returnArray = [...prevState, action.todo];
             break;
 
