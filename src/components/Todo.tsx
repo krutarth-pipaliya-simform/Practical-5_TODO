@@ -2,12 +2,12 @@ import type { ActionType } from "@/hooks/types";
 import { Button } from "./ui/button";
 
 export const Todo = ({
-    title,
-    timeCreated,
-    isComplete,
     dispatch,
-    id,
-}: TodoType & { dispatch: (action: ActionType) => void }) => {
+    todo: { id, title, isComplete, timeCreated },
+}: {
+    dispatch: (action: ActionType) => void;
+    todo: TodoType;
+}) => {
     return (
         <div className="flex items-center gap-4 rounded-lg p-3 transition-colors hover:bg-muted">
             <div>

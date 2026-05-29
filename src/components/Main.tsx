@@ -43,7 +43,7 @@ export const Main = ({
                     )
                     .map((todo) => (
                         <li key={todo.id}>
-                            <Todo dispatch={dispatch} {...todo}></Todo>
+                            <Todo dispatch={dispatch} todo={todo}></Todo>
                         </li>
                     ))}
             </ul>
