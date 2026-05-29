@@ -1,4 +1,4 @@
-import type { ActionType } from "@/hooks/useMyReducer";
+import type { ActionType } from "@/hooks/types";
 import { Button } from "./ui/button";
 
 export const Todo = ({

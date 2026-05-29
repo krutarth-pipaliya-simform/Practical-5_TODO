@@ -1,4 +1,4 @@
-import { type ActionType } from "@/hooks/useMyReducer";
+import type { ActionType } from "@/hooks/types";
 import { RadioSelection } from "./RadioSelection";
 import { Todo, type TodoType } from "./Todo";
 import { useState } from "react";

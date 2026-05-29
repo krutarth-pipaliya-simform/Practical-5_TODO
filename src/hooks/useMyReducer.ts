@@ -1,20 +1,6 @@
 import type { TodoType } from "@/components/Todo";
 import { useReducer } from "react";
-
-export type ActionType =
-    | {
-          type: "ADD";
-          todo: TodoType;
-      }
-    | {
-          type: "DELETE";
-          todoId: string;
-      }
-    | {
-          type: "UPDATE";
-          todo: TodoType;
-          todoId: string;
-      };
+import type { ActionType } from "./types";
 
 export const useMyReducer = () => {
     let todos = localStorage.getItem("todos");
